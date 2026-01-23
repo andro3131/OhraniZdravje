@@ -1,4 +1,4 @@
-// Ohrani Zdrav je - Main JavaScript
+// Ohrani Zdravje - Main JavaScript
 
 // Initialize AOS (Animate on Scroll)
 AOS.init({
@@ -97,44 +97,4 @@ if ('loading' in HTMLImageElement.prototype) {
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
     document.body.appendChild(script);
-}
-
-// Testimonials Slider
-const testimonialsTrack = document.getElementById('testimonialsTrack');
-const prevBtn = document.getElementById('testimonialPrev');
-const nextBtn = document.getElementById('testimonialNext');
-
-if (testimonialsTrack && prevBtn && nextBtn) {
-    const cards = testimonialsTrack.querySelectorAll('.testimonial-card');
-    const cardWidth = cards[0].offsetWidth;
-    const gap = 40; // var(--spacing-lg) = 2.5rem = 40px
-    const scrollAmount = cardWidth + gap;
-    let currentIndex = 0;
-    const maxIndex = cards.length - 3; // Show 3 cards at a time
-
-    function updateSlider() {
-        const translateX = -(currentIndex * scrollAmount);
-        testimonialsTrack.style.transform = `translateX(${translateX}px)`;
-
-        // Update button states
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= maxIndex;
-    }
-
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateSlider();
-        }
-    });
-
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-            updateSlider();
-        }
-    });
-
-    // Initialize
-    updateSlider();
 }
