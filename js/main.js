@@ -99,40 +99,42 @@ if ('loading' in HTMLImageElement.prototype) {
     document.body.appendChild(script);
 }
 
-// Testimonials Carousel
-let currentTestimonialSet = 0;
-const testimonialCards = document.querySelectorAll('.testimonial-card');
-const totalCards = testimonialCards.length;
-const cardsPerSet = 3;
-const totalSets = Math.ceil(totalCards / cardsPerSet);
+// Testimonials Slider
+const testimonialsTrack = document.getElementById('testimonialsTrack');
+const prevBtn = document.getElementById('testimonialPrev');
+const nextBtn = document.getElementById('testimonialNext');
 
-function showTestimonialSet(setIndex) {
-    // Hide all cards
-    testimonialCards.forEach(card => {
-        card.style.display = 'none';
-        card.style.opacity = '0';
+if (testimonialsTrack && prevBtn && nextBtn) {
+    const cards = testimonialsTrack.querySelectorAll('.testimonial-card');
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 40; // var(--spacing-lg) = 2.5rem = 40px
+    const scrollAmount = cardWidth + gap;
+    let currentIndex = 0;
+    const maxIndex = cards.length - 3; // Show 3 cards at a time
+
+    function updateSlider() {
+        const translateX = -(currentIndex * scrollAmount);
+        testimonialsTrack.style.transform = `translateX(${translateX}px)`;
+
+        // Update button states
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
     });
 
-    // Calculate which cards to show
-    const startIndex = setIndex * cardsPerSet;
-    const endIndex = Math.min(startIndex + cardsPerSet, totalCards);
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateSlider();
+        }
+    });
 
-    // Show cards for this set with fade-in
-    for (let i = startIndex; i < endIndex; i++) {
-        testimonialCards[i].style.display = 'block';
-        // Trigger reflow for animation
-        testimonialCards[i].offsetHeight;
-        testimonialCards[i].style.opacity = '1';
-    }
-}
-
-// Initialize testimonials carousel
-if (testimonialCards.length > 0) {
-    showTestimonialSet(0);
-
-    // Auto-rotate every 5 seconds
-    setInterval(() => {
-        currentTestimonialSet = (currentTestimonialSet + 1) % totalSets;
-        showTestimonialSet(currentTestimonialSet);
-    }, 5000);
+    // Initialize
+    updateSlider();
 }
