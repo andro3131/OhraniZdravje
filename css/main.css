@@ -117,7 +117,7 @@ a {
 }
 
 .logo img {
-    height: 60px;
+    height: 90px;
     width: auto;
 }
 
@@ -379,7 +379,7 @@ a {
     transform-style: preserve-3d;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
     animation: float-product 3s ease-in-out infinite;
-    max-width: 1057px;
+    max-width: 1586px;
     width: 100%;
     height: auto;
 }
