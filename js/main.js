@@ -98,3 +98,41 @@ if ('loading' in HTMLImageElement.prototype) {
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
     document.body.appendChild(script);
 }
+
+// Testimonials Carousel
+let currentTestimonialSet = 0;
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const totalCards = testimonialCards.length;
+const cardsPerSet = 3;
+const totalSets = Math.ceil(totalCards / cardsPerSet);
+
+function showTestimonialSet(setIndex) {
+    // Hide all cards
+    testimonialCards.forEach(card => {
+        card.style.display = 'none';
+        card.style.opacity = '0';
+    });
+
+    // Calculate which cards to show
+    const startIndex = setIndex * cardsPerSet;
+    const endIndex = Math.min(startIndex + cardsPerSet, totalCards);
+
+    // Show cards for this set with fade-in
+    for (let i = startIndex; i < endIndex; i++) {
+        testimonialCards[i].style.display = 'block';
+        // Trigger reflow for animation
+        testimonialCards[i].offsetHeight;
+        testimonialCards[i].style.opacity = '1';
+    }
+}
+
+// Initialize testimonials carousel
+if (testimonialCards.length > 0) {
+    showTestimonialSet(0);
+
+    // Auto-rotate every 5 seconds
+    setInterval(() => {
+        currentTestimonialSet = (currentTestimonialSet + 1) % totalSets;
+        showTestimonialSet(currentTestimonialSet);
+    }, 5000);
+}

@@ -209,7 +209,7 @@ a {
 /* ============ HERO SECTION ============ */
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -232,7 +232,7 @@ a {
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -1032,7 +1032,7 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .testimonials-grid {
+    .testimonials-track {
         grid-template-columns: 1fr;
     }
 
@@ -1091,22 +1091,39 @@ a {
 }
 
 .testimonials-track {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
-    animation: scroll-testimonials 40s linear infinite;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.testimonials-track:hover {
-    animation-play-state: paused;
+.testimonial-card {
+    opacity: 0;
+    animation: fadeInCard 0.6s ease-in-out forwards;
 }
 
-@keyframes scroll-testimonials {
-    0% {
-        transform: translateX(0);
+.testimonial-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.testimonial-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.testimonial-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    100% {
-        transform: translateX(-50%);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -1116,9 +1133,14 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     padding: var(--spacing-lg);
-    min-width: 380px;
-    flex-shrink: 0;
-    transition: transform 0.3s;
+    transition: all 0.6s ease-in-out;
+    display: none;
+    opacity: 0;
+}
+
+.testimonial-card.visible {
+    display: block;
+    opacity: 1;
 }
 
 .testimonial-card:hover {
