@@ -1161,8 +1161,8 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .testimonial-card {
-        min-width: 100%;
+    .testimonials-track {
+        grid-template-columns: 1fr;
     }
 
     .newsletter-form {
@@ -1226,15 +1226,12 @@ a {
 }
 
 .testimonials-track {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
-    transition: transform 0.5s ease-in-out;
-    overflow: hidden;
 }
 
 .testimonial-card {
-    min-width: calc(33.333% - var(--spacing-lg));
-    flex-shrink: 0;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
