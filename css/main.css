@@ -382,24 +382,24 @@ a {
     max-width: 100%;
     width: 100%;
     height: auto;
-    transform: scale(1.8);
+    transform: scale(1.35);
 }
 
 @keyframes float-product {
 
     0%,
     100% {
-        transform: scale(1.8) translateY(0px);
+        transform: scale(1.35) translateY(0px);
     }
 
     50% {
-        transform: scale(1.8) translateY(-20px);
+        transform: scale(1.35) translateY(-20px);
     }
 }
 
 .product-3d:hover img {
     animation-play-state: paused;
-    transform: scale(1.8) rotateY(15deg) rotateX(5deg);
+    transform: scale(1.35) rotateY(15deg) rotateX(5deg);
 }
 
 .badge-new {
