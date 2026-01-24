@@ -35,20 +35,22 @@ if (mobileToggle && mainNav) {
 // Scroll to Top Button
 const scrollTopBtn = document.getElementById('scrollTop');
 
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollTopBtn.classList.add('visible');
-    } else {
-        scrollTopBtn.classList.remove('visible');
-    }
-});
-
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
     });
-});
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // Newsletter Form
 const newsletterForm = document.getElementById('newsletterForm');
@@ -107,44 +109,44 @@ const isMobile = window.innerWidth <= 768;
 if (testimonialCards.length > 0 && !isMobile) {
     const allCards = Array.from(testimonialCards);
     const totalCards = allCards.length;
-    
+
     // Initially hide all except first 3 on desktop
     allCards.forEach((card, index) => {
         if (index >= 3) {
             card.style.display = 'none';
         }
     });
-    
+
     let visibleIndices = [0, 1, 2];
-    
+
     // Rotate one random card every 7 seconds
     setInterval(() => {
         const positionToReplace = Math.floor(Math.random() * 3);
         const oldIndex = visibleIndices[positionToReplace];
-        
+
         const availableIndices = [];
         for (let i = 0; i < totalCards; i++) {
             if (!visibleIndices.includes(i)) {
                 availableIndices.push(i);
             }
         }
-        
+
         if (availableIndices.length > 0) {
             const newIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
-            
+
             allCards[oldIndex].style.transition = 'opacity 0.5s ease';
             allCards[oldIndex].style.opacity = '0';
-            
+
             setTimeout(() => {
                 allCards[oldIndex].style.display = 'none';
                 allCards[newIndex].style.display = 'block';
                 allCards[newIndex].style.opacity = '0';
-                
+
                 setTimeout(() => {
                     allCards[newIndex].style.transition = 'opacity 0.5s ease';
                     allCards[newIndex].style.opacity = '1';
                 }, 50);
-                
+
                 visibleIndices[positionToReplace] = newIndex;
             }, 500);
         }
