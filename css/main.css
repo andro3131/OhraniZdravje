@@ -321,6 +321,8 @@ a {
     grid-template-columns: 1fr 1.2fr;
     gap: var(--spacing-xl);
     align-items: center;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .hero-text {
@@ -1562,5 +1564,20 @@ a {
     .testimonial-card:first-child {
         display: block !important;
         opacity: 1 !important;
+    }
+}
+/* Mobilni newsletter overflow fix */
+@media (max-width: 768px) {
+    .newsletter {
+        overflow: hidden;
+    }
+    
+    .newsletter-form {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .newsletter-form input {
+        max-width: 100%;
     }
 }
