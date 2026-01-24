@@ -314,7 +314,7 @@ a {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     gap: var(--spacing-xl);
     align-items: center;
 }
@@ -379,26 +379,27 @@ a {
     transform-style: preserve-3d;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
     animation: float-product 3s ease-in-out infinite;
-    max-width: 2379px;
+    max-width: 100%;
     width: 100%;
     height: auto;
+    transform: scale(1.8);
 }
 
 @keyframes float-product {
 
     0%,
     100% {
-        transform: translateY(0px);
+        transform: scale(1.8) translateY(0px);
     }
 
     50% {
-        transform: translateY(-20px);
+        transform: scale(1.8) translateY(-20px);
     }
 }
 
 .product-3d:hover img {
     animation-play-state: paused;
-    transform: rotateY(15deg) rotateX(5deg) scale(1.05);
+    transform: scale(1.8) rotateY(15deg) rotateX(5deg);
 }
 
 .badge-new {
