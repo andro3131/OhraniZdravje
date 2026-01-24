@@ -928,7 +928,7 @@ a {
     left: 16px;
     background: var(--primary);
     color: white;
-    padding: 6px 12px;
+    padding: 3px 8px;
     border-radius: 8px;
     font-size: 12px;
     font-weight: 700;
@@ -1274,8 +1274,8 @@ a {
     }
 
     .trust-badge {
-        padding: 6px 12px;
-        font-size: 11px;
+        padding: 3px 8px;
+        font-size: 9px;
     }
 
     .trust-badge svg {
@@ -1293,7 +1293,7 @@ a {
         top: 10px;
         right: 10px;
         padding: 0.5rem;
-        font-size: 11px;
+        font-size: 9px;
     }
 
     .badge-new span {
@@ -1305,7 +1305,7 @@ a {
     }
 
     .old-price {
-        font-size: 11px;
+        font-size: 9px;
     }
 
     .new-price {
