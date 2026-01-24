@@ -1530,23 +1530,3 @@ a {
     opacity: 0.8;
 }
 
-/* MOBILNI TESTIMONIALS FIX - SAMO ENA VISIBLE */
-@media (max-width: 768px) {
-    .testimonials-track {
-        display: block !important;
-        width: 100% !important;
-        position: relative !important;
-    }
-
-    .testimonial-card {
-        display: none !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: var(--spacing-lg) !important;
-    }
-
-    .testimonial-card:first-child {
-        display: block !important;
-        opacity: 1 !important;
-    }
-}
