@@ -8,10 +8,10 @@
 // 3. The product ID is in the URL (e.g., https://my.ecwid.com/cp/CP.html#product:id=12345678)
 
 const PRODUCT_IDS = {
-    'Generator vodika OLV-HYD1800': 'PRODUCT_ID_1',  // Replace with actual ID
-    'Generator vodika OLV-HYD3000': 'PRODUCT_ID_2',  // Replace with actual ID
-    'Vodikova Flaška': 'PRODUCT_ID_3',               // Replace with actual ID
-    'Vodikov sprej': 'PRODUCT_ID_4'                  // Replace with actual ID
+    'Generator vodika OLV-HYD1800': '811184690',
+    'Generator vodika OLV-HYD3000': '811200271',
+    'Vodikova Flaška': '811200276',
+    'Vodikov sprej': '811184695'
 };
 
 // Wait for Ecwid to be ready
