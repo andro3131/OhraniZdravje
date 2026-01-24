@@ -321,8 +321,6 @@ a {
     grid-template-columns: 1fr 1.2fr;
     gap: var(--spacing-xl);
     align-items: center;
-    max-width: 100%;
-    overflow: hidden;
 }
 
 .hero-text {
@@ -1275,7 +1273,7 @@ a {
     }
 
     .hero-title {
-        font-size: 2.3rem;
+        font-size: 2.76rem;
     }
 
     .hero-subtitle {
@@ -1571,14 +1569,24 @@ a {
 @media (max-width: 768px) {
     .newsletter {
         overflow: hidden;
+        padding: var(--spacing-xl) 0;
     }
 
     .newsletter-form {
         max-width: 100%;
         width: 100%;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
     }
 
     .newsletter-form input {
         max-width: 100%;
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+        flex: 1 1 100%;
     }
 }
