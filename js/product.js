@@ -25,7 +25,6 @@ function increaseQty() {
 
     if (currentQty < maxQty) {
         qtyInput.value = currentQty + 1;
-        updateSnipcartQty(currentQty + 1);
     }
 }
 
@@ -36,33 +35,8 @@ function decreaseQty() {
 
     if (currentQty > minQty) {
         qtyInput.value = currentQty - 1;
-        updateSnipcartQty(currentQty - 1);
     }
 }
-
-function updateSnipcartQty(qty) {
-    const addToCartBtn = document.querySelector('.snipcart-add-item');
-    if (addToCartBtn) {
-        addToCartBtn.setAttribute('data-item-quantity', qty);
-    }
-}
-
-// Manual quantity input update
-document.addEventListener('DOMContentLoaded', function () {
-    const qtyInput = document.getElementById('quantity');
-    if (qtyInput) {
-        qtyInput.addEventListener('change', function () {
-            const qty = parseInt(this.value);
-            const min = parseInt(this.min);
-            const max = parseInt(this.max);
-
-            if (qty < min) this.value = min;
-            if (qty > max) this.value = max;
-
-            updateSnipcartQty(parseInt(this.value));
-        });
-    }
-});
 
 // Product Tabs
 function openTab(tabName) {
@@ -87,12 +61,6 @@ function selectColor(element, colorName) {
     // Update active state
     document.querySelectorAll('.color-option').forEach(option => option.classList.remove('active'));
     element.classList.add('active');
-
-    // Update Snipcart data
-    const addToCartBtn = document.querySelector('.snipcart-add-item');
-    if (addToCartBtn) {
-        addToCartBtn.setAttribute('data-item-custom1-value', colorName);
-    }
 
     // Update selected color display
     const colorDisplay = document.getElementById('selectedColor');

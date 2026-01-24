@@ -37,14 +37,8 @@
                 </nav>
 
                 <div class="header-actions">
-                    <button class="snipcart-checkout cart-btn" aria-label="Košarica">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M9 2L7 6H3l3 14h12l3-14h-4l-2-4H9z" />
-                            <path d="M9 6v14M15 6v14" />
-                        </svg>
-                        <span class="snipcart-items-count">0</span>
-                    </button>
+                    <!-- Ecwid Shopping Bag Widget -->
+                    <div class="ec-cart-widget"></div>
 
                     <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
                         <span></span>
@@ -114,13 +108,17 @@
                         <label>Izberite barvo:</label>
                         <div class="color-options">
                             <div class="color-option color-blue active" onclick="selectColor(this, 'Modra')"
-                                title="Modra"></div>
-                            <div class="color-option color-red" onclick="selectColor(this, 'Rdeča')" title="Rdeča">
+                                data-color="Modra" title="Modra"></div>
+                            <div class="color-option color-red" onclick="selectColor(this, 'Rdeča')" data-color="Rdeča"
+                                title="Rdeča">
                             </div>
-                            <div class="color-option color-pink" onclick="selectColor(this, 'Roza')" title="Roza"></div>
-                            <div class="color-option color-black" onclick="selectColor(this, 'Siva')" title="Siva">
+                            <div class="color-option color-pink" onclick="selectColor(this, 'Roza')" data-color="Roza"
+                                title="Roza"></div>
+                            <div class="color-option color-black" onclick="selectColor(this, 'Siva')" data-color="Siva"
+                                title="Siva">
                             </div>
-                            <div class="color-option color-gold" onclick="selectColor(this, 'Zlata')" title="Zlata">
+                            <div class="color-option color-gold" onclick="selectColor(this, 'Zlata')" data-color="Zlata"
+                                title="Zlata">
                             </div>
                         </div>
                         <p class="selected-color-display">Izbrana barva: <strong id="selectedColor">Modra</strong></p>
@@ -136,12 +134,8 @@
                             </div>
                         </div>
 
-                        <button class="snipcart-add-item btn-modern btn-large" data-item-id="flask-001"
-                            data-item-price="170.00"
-                            data-item-description="Vodikova flaška - portabilna rešitev za zdravo vodo na poti"
-                            data-item-name="Vodikova Flaška"
-                            data-item-custom1-name="Barva" data-item-custom1-options="Modra|Rdeča|Roza|Siva|Zlata"
-                            data-item-custom1-value="Modra" data-item-quantity="1">
+                        <button class="add-to-cart-btn btn-modern btn-large" data-product-id="811200276"
+                            data-product-name="Vodikova Flaška" data-product-price="170" data-has-options="true">
                             Dodaj v košarico
                         </button>
                     </div>
@@ -295,12 +289,15 @@
         </div>
     </footer>
 
-    <!-- Snipcart -->
-    <div id="snipcart" data-api-key="MTI1NDM0NmItMDFlZC00Y2FkLWJkOTYtYTEyNzdkZTAxMTU2NjM5MDQ4NDQzNDY5OTM2ODY4" data-config-modal-style="side" data-currency="eur"
-        hidden></div>
-
+    <!-- Ecwid Scripts -->
+    <script data-cfasync="false" type="text/javascript"
+        src="https://app.ecwid.com/script.js?129794052&data_platform=code&data_date=2026-01-24"
+        charset="utf-8"></script>
+    <script type="text/javascript">
+        Ecwid.init();
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+    <script src="js/shop.js"></script>
     <script src="js/main.js"></script>
     <script src="js/product.js"></script>
 </body>

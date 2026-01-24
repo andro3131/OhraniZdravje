@@ -69,10 +69,17 @@ function initAddToCartButtons() {
                 return;
             }
 
+            // Get quantity if input exists
+            let quantity = 1;
+            const qtyInput = document.getElementById('quantity');
+            if (qtyInput) {
+                quantity = parseInt(qtyInput.value) || 1;
+            }
+
             // Prepare cart item
             const cartItem = {
                 id: productId,
-                quantity: 1
+                quantity: quantity
             };
 
             // If product has options (like color for Vodikova Flaška)
