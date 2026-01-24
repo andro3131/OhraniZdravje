@@ -98,6 +98,7 @@ a {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    overflow-x: hidden;
 }
 
 /* ============ HEADER ============ */
@@ -1209,8 +1210,9 @@ a {
         padding: 0.5rem 0;
     }
 
+    /* 2. Logo 50% večji (iz 50px na 75px) */
     .logo img {
-        height: 50px;
+        height: 75px;
     }
 
     .nav {
@@ -1253,9 +1255,9 @@ a {
         gap: 2rem;
     }
 
-    /* 1. Naslov nižje v modro cono */
+    /* 3. Naslov manj navzdol (iz 3rem na 1.5rem) */
     .hero-text {
-        padding-top: 3rem;
+        padding-top: 1.5rem;
     }
 
     .hero-title {
@@ -1348,10 +1350,15 @@ a {
         grid-template-columns: 1fr;
     }
 
-    /* 8. Testimonials ena pod drugo */
+    /* 7. Testimonials - 3 kartice ena pod drugo (visible) */
     .testimonials-track {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
+    }
+
+    .testimonial-card {
+        display: block !important;
+        opacity: 1 !important;
     }
 
     .newsletter-form {
