@@ -1,5 +1,5 @@
 window.SnipcartSettings = {
-    publicApiKey: "MTI1NDMON01tMDFIZC00Y2FkLWJkOTYtYTEyNzdkZTAxMTU2NjM5MDQ4NDQzNDY5OTM2ODY4",
+    publicApiKey: "MTI1NDM0NmItMDFlZC00Y2FkLWJkOTYtYTEyNzdkZTAxMTU2NjM5MDQ4NDQzNDY5OTM2ODY4",
     loadStrategy: "on-user-interaction",
     modalStyle: "side",
     currency: "eur"
