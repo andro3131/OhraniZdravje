@@ -119,7 +119,7 @@ a {
 }
 
 .logo img {
-    height: 117px;
+    height: 82px;
     width: auto;
 }
 
@@ -1210,9 +1210,9 @@ a {
         padding: 0.5rem 0;
     }
 
-    /* 2. Logo 50% večji (iz 50px na 75px) */
+    /* Logo 30% manjši */
     .logo img {
-        height: 75px;
+        height: 52px;
     }
 
     .nav {
