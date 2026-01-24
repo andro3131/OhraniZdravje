@@ -126,7 +126,7 @@ a {
 .nav-list {
     display: flex;
     list-style: none;
-    gap: var(--spacing-lg);
+    gap: 1.2rem;
 }
 
 .nav-list a {
@@ -615,7 +615,7 @@ a {
 .trust-bar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-lg);
+    gap: 1.2rem;
     padding: 0;
 }
 
@@ -799,7 +799,7 @@ a {
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
+    gap: 1.2rem;
 }
 
 .benefit-card {
@@ -898,7 +898,7 @@ a {
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
+    gap: 1.2rem;
     margin-bottom: var(--spacing-xl);
 }
 
@@ -1087,7 +1087,7 @@ a {
 .footer-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-lg);
+    gap: 1.2rem;
     margin-bottom: var(--spacing-lg);
 }
 
@@ -1205,7 +1205,7 @@ a {
 @media (max-width: 1024px) {
     .hero-content {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: 1.2rem;
     }
 
     .hero-title {
@@ -1487,7 +1487,7 @@ a {
 .testimonials-track {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
+    gap: 1.2rem;
 }
 
 .testimonial-card {
