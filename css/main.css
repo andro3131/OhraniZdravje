@@ -67,6 +67,7 @@ body {
     line-height: 1.6;
     color: var(--gray-900);
     background: var(--gray-50);
+    overflow-x: hidden;
 }
 
 h1,
@@ -1202,8 +1203,40 @@ a {
 }
 
 @media (max-width: 768px) {
+
+    /* 2. Header ožji */
+    .header {
+        padding: 0.5rem 0;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
     .nav {
         display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0;
+    }
+
+    .nav-list li {
+        padding: 1rem;
+        border-bottom: 1px solid var(--gray-100);
     }
 
     .mobile-toggle {
@@ -1212,6 +1245,17 @@ a {
 
     .hero {
         min-height: auto;
+        padding-top: 2rem;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* 1. Naslov nižje v modro cono */
+    .hero-text {
+        padding-top: 3rem;
     }
 
     .hero-title {
@@ -1222,8 +1266,61 @@ a {
         font-size: 1.2rem;
     }
 
+    /* 3. Trust badges v eno vrsto, manjše */
+    .hero-trust-badges {
+        gap: 0.5rem;
+    }
+
+    .trust-badge {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .trust-badge svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* 4. CTA glassmorphism manjši */
+    .cta-glass {
+        padding: 1rem;
+    }
+
+    /* 5. Badge 50% manjši */
+    .badge-new {
+        top: 10px;
+        right: 10px;
+        padding: 0.5rem;
+        font-size: 11px;
+    }
+
+    .badge-new span {
+        font-size: 10px;
+    }
+
+    .price-badge {
+        gap: 2px;
+    }
+
+    .old-price {
+        font-size: 11px;
+    }
+
+    .new-price {
+        font-size: 16px;
+    }
+
     .trust-bar {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 6. Omeji širino - fix horizontal scroll */
+    * {
+        max-width: 100vw;
+    }
+
+    .container {
+        padding: 0 1rem;
     }
 
     .info-grid,
@@ -1232,9 +1329,15 @@ a {
         gap: var(--spacing-md);
     }
 
-    .feature-block-reverse,
-    .feature-block:nth-child(even) {
-        direction: ltr;
+    /* 7. Feature blocks - vedno slika → tekst (brez reverse) */
+    .feature-block-reverse .feature-image,
+    .feature-block:nth-child(even) .feature-image {
+        order: 1;
+    }
+
+    .feature-block-reverse .feature-content,
+    .feature-block:nth-child(even) .feature-content {
+        order: 2;
     }
 
     .benefits-grid {
@@ -1245,8 +1348,10 @@ a {
         grid-template-columns: 1fr;
     }
 
+    /* 8. Testimonials ena pod drugo */
     .testimonials-track {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 
     .newsletter-form {

@@ -12,10 +12,23 @@ AOS.init({
 const mobileToggle = document.getElementById('mobileToggle');
 const mainNav = document.getElementById('mainNav');
 
-if (mobileToggle) {
+if (mobileToggle && mainNav) {
     mobileToggle.addEventListener('click', () => {
         mainNav.classList.toggle('active');
         mobileToggle.classList.toggle('active');
+
+        // Animate hamburger icon
+        const spans = mobileToggle.querySelectorAll('span');
+        spans.forEach(span => span.classList.toggle('active'));
+    });
+
+    // Close menu when clicking on a link
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+            mobileToggle.classList.remove('active');
+        });
     });
 }
 
