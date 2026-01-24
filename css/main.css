@@ -212,13 +212,11 @@ a {
 /* ============ HERO SECTION ============ */
 .hero {
     position: relative;
-    min-height: 600px;
+    min-height: 85vh;
     display: flex;
     align-items: center;
-    background: var(--gradient-purple);
-    color: white;
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow: hidden;
+    padding: 0;
 }
 
 .hero::after {
@@ -1275,7 +1273,7 @@ a {
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.76rem;
     }
 
     .hero-subtitle {
