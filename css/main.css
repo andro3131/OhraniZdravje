@@ -180,6 +180,7 @@ a {
     right: -4px;
     background: var(--gradient-cta);
     color: white;
+    overflow: hidden;
     font-size: 12px;
     font-weight: 700;
     min-width: 18px;
@@ -243,6 +244,7 @@ a {
     align-items: center;
     gap: 8px;
     color: white;
+    overflow: hidden;
     animation: bounce 2s infinite;
 }
 
@@ -323,6 +325,7 @@ a {
 
 .hero-text {
     color: white;
+    overflow: hidden;
 }
 
 .hero-badge {
@@ -389,6 +392,7 @@ a {
     font-size: 14px;
     font-weight: 600;
     color: white;
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 
@@ -466,6 +470,7 @@ a {
     right: 20px;
     background: var(--gradient-card);
     color: white;
+    overflow: hidden;
     padding: var(--spacing-md);
     border-radius: 16px;
     text-align: center;
@@ -520,6 +525,7 @@ a {
     font-weight: 600;
     font-family: var(--font-body);
     color: white;
+    overflow: hidden;
     background: var(--gradient-cta);
     border: none;
     border-radius: 50px;
@@ -640,6 +646,7 @@ a {
     padding: 12px;
     background: linear-gradient(135deg, #0EA5E9 0%, #8B5CF6 100%);
     color: white;
+    overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
     transition: all 0.3s ease;
@@ -928,6 +935,7 @@ a {
     left: 16px;
     background: var(--primary);
     color: white;
+    overflow: hidden;
     padding: 3px 8px;
     border-radius: 8px;
     font-size: 12px;
@@ -1020,6 +1028,7 @@ a {
 .newsletter-content {
     text-align: center;
     color: white;
+    overflow: hidden;
     position: relative;
     z-index: 1;
 }
@@ -1112,6 +1121,7 @@ a {
 
 .footer-title {
     color: white;
+    overflow: hidden;
     margin-bottom: var(--spacing-md);
     font-size: 1.1rem;
 }
@@ -1131,6 +1141,7 @@ a {
 
 .footer-links a:hover {
     color: white;
+    overflow: hidden;
 }
 
 .footer-contact {
@@ -1166,6 +1177,7 @@ a {
     border: none;
     border-radius: 50%;
     color: white;
+    overflow: hidden;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1292,7 +1304,7 @@ a {
     .badge-new {
         top: 10px;
         right: 10px;
-        padding: 1.2rem;
+        padding: 1.44rem;
         font-size: 9px;
     }
 
@@ -1438,6 +1450,7 @@ a {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     overflow: hidden;
+    overflow: hidden;
 }
 
 .testimonials-header {
@@ -1449,6 +1462,7 @@ a {
     font-size: 2.5rem;
     margin-bottom: var(--spacing-sm);
     color: white;
+    overflow: hidden;
 }
 
 .testimonials-header p {
