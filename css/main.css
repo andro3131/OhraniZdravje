@@ -1717,6 +1717,100 @@ a {
     margin: 1rem 0;
 }
 
+/* Product Pricing with Sale */
+.product-pricing {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.product-price-old {
+    font-size: 1rem;
+    color: var(--gray-500);
+    text-decoration: line-through;
+}
+
+/* Color Selector */
+.color-selector {
+    margin: 1rem 0;
+}
+
+.color-selector label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.color-options {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.color-option {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+    border-color: var(--gray-400);
+}
+
+.color-option.active {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(126, 87, 194, 0.2);
+}
+
+.selected-color-name {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+/* Product Details Link */
+.product-details-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.product-details-link:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* Enhanced Sale Badge */
+.sale-badge {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
 .price-old {
     font-size: 1rem;
     color: var(--gray-500);

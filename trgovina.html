@@ -61,19 +61,108 @@
     <!-- Products Section -->
     <section class="products-section">
         <div class="container">
-            <!-- Ecwid Store Widget -->
-            <div id="my-store-129794052"></div>
-            <div>
-                <script data-cfasync="false" type="text/javascript"
-                    src="https://app.ecwid.com/script.js?129794052&data_platform=code&data_date=2026-01-24"
-                    charset="utf-8"></script>
-                <script type="text/javascript">
-                    xProductBrowser("categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=my-store-129794052");
-                    Ecwid.init();
-                </script>
+            <div class="products-grid">
+                <!-- Generator OLV-HYD1800 -->
+                <div class="product-card" data-aos="fade-up">
+                    <div class="product-image">
+                        <img src="images/products/gen1800-main.jpg" alt="Generator vodika OLV-HYD1800">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Generator vodika OLV-HYD1800</h3>
+                        <p class="product-description">Profesionalni generator vodika z zmogljivostjo 1800ml/min</p>
+                        <div class="product-price">3.500 €</div>
+                        <button class="btn btn-primary add-to-cart-btn" data-product-id="PRODUCT_ID_1"
+                            data-product-name="Generator vodika OLV-HYD1800" data-product-price="3500">
+                            Dodaj v košarico
+                        </button>
+                        <a href="generator-hyd1800.html" class="product-details-link">Več o izdelku →</a>
+                    </div>
+                </div>
+
+                <!-- Generator OLV-HYD3000 -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image">
+                        <img src="images/products/gen3000-main.jpg" alt="Generator vodika OLV-HYD3000">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Generator vodika OLV-HYD3000</h3>
+                        <p class="product-description">Vrhunski generator vodika z zmogljivostjo 3000ml/min</p>
+                        <div class="product-price">4.500 €</div>
+                        <button class="btn btn-primary add-to-cart-btn" data-product-id="PRODUCT_ID_2"
+                            data-product-name="Generator vodika OLV-HYD3000" data-product-price="4500">
+                            Dodaj v košarico
+                        </button>
+                        <a href="generator-hyd3000.html" class="product-details-link">Več o izdelku →</a>
+                    </div>
+                </div>
+
+                <!-- Vodikova Flaška -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="images/products/flask-main.jpg" alt="Vodikova Flaška">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Vodikova Flaška</h3>
+                        <p class="product-description">Prenosna vodikova flaška za vsakodnevno uporabo</p>
+                        <div class="product-price">170 €</div>
+
+                        <!-- Color Selector -->
+                        <div class="color-selector">
+                            <label>Barva:</label>
+                            <div class="color-options">
+                                <button class="color-option active" data-color="Modra"
+                                    style="background-color: #4A90E2;" title="Modra"></button>
+                                <button class="color-option" data-color="Rdeča" style="background-color: #E74C3C;"
+                                    title="Rdeča"></button>
+                                <button class="color-option" data-color="Roza" style="background-color: #FF69B4;"
+                                    title="Roza"></button>
+                                <button class="color-option" data-color="Siva" style="background-color: #7F8C8D;"
+                                    title="Siva"></button>
+                                <button class="color-option" data-color="Zlata" style="background-color: #F39C12;"
+                                    title="Zlata"></button>
+                            </div>
+                            <span class="selected-color-name">Modra</span>
+                        </div>
+
+                        <button class="btn btn-primary add-to-cart-btn" data-product-id="PRODUCT_ID_3"
+                            data-product-name="Vodikova Flaška" data-product-price="170" data-has-options="true">
+                            Dodaj v košarico
+                        </button>
+                        <a href="vodikova-flaska.html" class="product-details-link">Več o izdelku →</a>
+                    </div>
+                </div>
+
+                <!-- Vodikov Sprej -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-badge sale-badge">AKCIJA -20%</div>
+                    <div class="product-image">
+                        <img src="images/products/vodikov-sprej.jpg" alt="Vodikov sprej">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Vodikov sprej</h3>
+                        <p class="product-description">Vodikov sprej za nego kože</p>
+                        <div class="product-pricing">
+                            <span class="product-price-old">120 €</span>
+                            <span class="product-price">99 €</span>
+                        </div>
+                        <button class="btn btn-primary add-to-cart-btn" data-product-id="PRODUCT_ID_4"
+                            data-product-name="Vodikov sprej" data-product-price="99">
+                            Dodaj v košarico
+                        </button>
+                        <a href="vodikov-sprej.html" class="product-details-link">Več o izdelku →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Ecwid Scripts (for cart functionality only) -->
+    <script data-cfasync="false" type="text/javascript"
+        src="https://app.ecwid.com/script.js?129794052&data_platform=code&data_date=2026-01-24"
+        charset="utf-8"></script>
+    <script type="text/javascript">
+        Ecwid.init();
+    </script>
 
     <!-- Footer (copy from index.html) -->
     <footer class="footer">
@@ -97,6 +186,7 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/shop.js"></script>
     <script src="js/main.js"></script>
 </body>
 
