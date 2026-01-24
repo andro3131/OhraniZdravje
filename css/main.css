@@ -337,7 +337,7 @@ a {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 4.025rem;
     margin-bottom: var(--spacing-sm);
 }
 
@@ -1261,7 +1261,7 @@ a {
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
 
     .hero-subtitle {
@@ -1384,24 +1384,24 @@ a {
     .testimonials-track {
         grid-template-columns: 1fr;
 
-    /* Testimonials - ena visible z puščicami */
-    .testimonials-container {
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .testimonials-track {
-        display: flex !important;
-        transition: transform 0.4s ease-in-out;
-    }
-    
-    .testimonial-card {
-        min-width: 100% !important;
-        flex-shrink: 0;
-        display: block !important;
-        opacity: 1 !important;
-        margin: 0;
-    }
+        /* Testimonials - ena visible z puščicami */
+        .testimonials-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonials-track {
+            display: flex !important;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .testimonial-card {
+            min-width: 100% !important;
+            flex-shrink: 0;
+            display: block !important;
+            opacity: 1 !important;
+            margin: 0;
+        }
 
 
 
@@ -1528,7 +1528,9 @@ a {
     margin: 0;
     font-size: 0.875rem;
     opacity: 0.8;
-}/* MOBILNI TESTIMONIALS FIX - SAMO ENA VISIBLE */
+}
+
+/* MOBILNI TESTIMONIALS FIX - SAMO ENA VISIBLE */
 @media (max-width: 768px) {
     .testimonials-track {
         display: block !important;
