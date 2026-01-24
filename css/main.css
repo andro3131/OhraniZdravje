@@ -1380,19 +1380,6 @@ a {
         grid-template-columns: 1fr;
     }
 
-    /* 7. Testimonials - 3 kartice ena pod drugo (visible) */
-    .testimonials-track {
-        grid-template-columns: 1fr;
-
-        /* Testimonials - ena visible z puščicami */
-        .testimonials-container {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .testimonials-track {
-            display: flex !important;
-            transition: transform 0.4s ease-in-out;
         }
 
         .testimonial-card {
@@ -1528,4 +1515,15 @@ a {
     margin: 0;
     font-size: 0.875rem;
     opacity: 0.8;
-}
+}    /* Testimonials - 3 static cards, no rotation on mobile */
+    .testimonials-track {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-md);
+        display: grid !important;
+    }
+
+    .testimonial-card {
+        display: block !important;
+        opacity: 1 !important;
+        min-width: auto !important;
+    }

@@ -99,64 +99,6 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 
-// Performance: Lazy load images
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.dataset.src || img.src;
-    });
-} else {
-    // Fallback for browsers that don't support lazy loading
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-}
-
-// Testimonials Auto-Rotation
-const testimonialCards = document.querySelectorAll('.testimonial-card');
-if (testimonialCards.length > 0) {
-    // Get all cards
-    const allCards = Array.from(testimonialCards);
-    const totalCards = allCards.length;
-
-    // Initially hide all cards except first 3
-    allCards.forEach((card, index) => {
-        if (index >= 3) {
-            card.style.display = 'none';
-        }
-    });
-
-    // Keep track of visible cards
-    let visibleIndices = [0, 1, 2];
-
-    // Rotate one random card every 7 seconds
-    setInterval(() => {
-        // Pick a random visible position to replace (0, 1, or 2)
-        const positionToReplace = Math.floor(Math.random() * 3);
-        const oldIndex = visibleIndices[positionToReplace];
-
-        // Get available cards (not currently visible)
-        const availableIndices = [];
-        for (let i = 0; i < totalCards; i++) {
-            if (!visibleIndices.includes(i)) {
-                availableIndices.push(i);
-            }
-        }
-
-        // Pick a random card from available ones
-        if (availableIndices.length > 0) {
-            const newIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
-
-            // Fade out old card
-            allCards[oldIndex].style.transition = 'opacity 0.5s ease';
-            allCards[oldIndex].style.opacity = '0';
-
-            setTimeout(() => {
-                // Hide old card and show new card
-                allCards[oldIndex].style.display = 'none';
-                allCards[newIndex].style.display = 'block';
-                allCards[newIndex].style.opacity = '0';
-
                 // Fade in new card
                 setTimeout(() => {
                     allCards[newIndex].style.transition = 'opacity 0.5s ease';
@@ -169,3 +111,54 @@ if (testimonialCards.length > 0) {
         }
     }, 7000); // Every 7 seconds
 }
+// Testimonials Auto-Rotation (DESKTOP ONLY)
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const isMobile = window.innerWidth <= 768;
+
+if (testimonialCards.length > 0 && !isMobile) {
+    const allCards = Array.from(testimonialCards);
+    const totalCards = allCards.length;
+
+    // Initially hide all except first 3
+    allCards.forEach((card, index) => {
+        if (index >= 3) {
+            card.style.display = 'none';
+        }
+    });
+
+    let visibleIndices = [0, 1, 2];
+
+    // Rotate one random card every 7 seconds
+    setInterval(() => {
+        const positionToReplace = Math.floor(Math.random() * 3);
+        const oldIndex = visibleIndices[positionToReplace];
+
+        const availableIndices = [];
+        for (let i = 0; i < totalCards; i++) {
+            if (!visibleIndices.includes(i)) {
+                availableIndices.push(i);
+            }
+        }
+
+        if (availableIndices.length > 0) {
+            const newIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+
+            allCards[oldIndex].style.transition = 'opacity 0.5s ease';
+            allCards[oldIndex].style.opacity = '0';
+
+            setTimeout(() => {
+                allCards[oldIndex].style.display = 'none';
+                allCards[newIndex].style.display = 'block';
+                allCards[newIndex].style.opacity = '0';
+
+                setTimeout(() => {
+                    allCards[newIndex].style.transition = 'opacity 0.5s ease';
+                    allCards[newIndex].style.opacity = '1';
+                }, 50);
+
+                visibleIndices[positionToReplace] = newIndex;
+            }, 500);
+        }
+    }, 7000);
+}
+
