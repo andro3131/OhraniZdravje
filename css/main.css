@@ -1255,9 +1255,9 @@ a {
         gap: 2rem;
     }
 
-    /* 3. Naslov manj navzdol (iz 3rem na 1.5rem) */
+    /* 2. Naslov še višje (padding-top 0.5rem) */
     .hero-text {
-        padding-top: 1.5rem;
+        padding-top: 0.5rem;
     }
 
     .hero-title {
@@ -1312,8 +1312,16 @@ a {
         font-size: 16px;
     }
 
+    /* 4. Trust bar zožan (desna dva odrezana fix) */
     .trust-bar {
         grid-template-columns: repeat(2, 1fr);
+        max-width: 95%;
+        margin: 0 auto;
+        gap: 0.75rem;
+    }
+
+    .trust-item {
+        padding: 1rem 0.5rem;
     }
 
     /* 6. Omeji širino - fix horizontal scroll */
@@ -1342,8 +1350,30 @@ a {
         order: 2;
     }
 
+    /* 6. Benefits padding zmanjšan (višina) */
+    .benefit-card {
+        padding: 1rem 0.75rem;
+    }
+
+    .benefit-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0.75rem;
+    }
+
+    .benefit-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .benefit-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
     .benefits-grid {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
 
     .products-grid {
