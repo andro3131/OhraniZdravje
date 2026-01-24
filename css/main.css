@@ -1464,7 +1464,20 @@ a {
         display: block !important;
         opacity: 1 !important;
         min-width: auto !important;
-    }    /* Testimonials - simple vertical stack */
+    }
+
+/* ============ RESPONSIVE TESTIMONIALS ============ */
+/* Desktop: 3 in row with rotation */
+@media (min-width: 769px) {
+    .testimonials-track {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+/* Mobile: 1 column, all visible */
+@media (max-width: 768px) {
     .testimonials-track {
         display: grid !important;
         grid-template-columns: 1fr !important;
@@ -1474,6 +1487,7 @@ a {
     .testimonial-card {
         display: block !important;
         opacity: 1 !important;
-        width: 100% !important;
+        width: auto !important;
         min-width: auto !important;
     }
+}
