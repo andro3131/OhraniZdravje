@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Vodikova flaška - portabilna rešitev za vsakodnevno pitje vodikove vode. Na voljo v 5 barvah.">
+
+    <title>Vodikova Flaška | Ohrani Zdravje</title>
+
+    <link rel="icon" type="image/png" href="images/logo-new.jpg">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="images/logo-new.jpg" alt="Ohrani Zdravje" width="468" height="117" loading="eager">
+                </a>
+
+                <nav class="nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="vodikova-flaska.html" class="active">Vodikova flaška</a></li>
+                        <li><a href="generatorji-vodika.html">Generatorji vodika</a></li>
+                        <li><a href="vodikov-sprej.html">Vodikov sprej</a></li>
+                        <li><a href="trgovina.html">Trgovina</a></li>
+                        <li><a href="novice.html">Novice</a></li>
+                        <li><a href="o-nas.html">O nas</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="snipcart-checkout cart-btn" aria-label="Košarica">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 2L7 6H3l3 14h12l3-14h-4l-2-4H9z" />
+                            <path d="M9 6v14M15 6v14" />
+                        </svg>
+                        <span class="snipcart-items-count">0</span>
+                    </button>
+
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="breadcrumb" data-aos="fade-up">
+                <a href="/">Domov</a> / <a href="trgovina.html">Trgovina</a> / <span>Vodikova Flaška</span>
+            </div>
+
+            <div class="product-detail-grid">
+                <!-- Product Images -->
+                <div class="product-gallery" data-aos="fade-right">
+                    <div class="gallery-main">
+                        <img src="images/products/vodikova-flaska.jpg" alt="Vodikova flaška" id="mainImage">
+                    </div>
+                    <div class="gallery-thumbs">
+                        <img src="images/products/vodikova-flaska.jpg" alt="Vodikova flaška" class="thumb active"
+                            onclick="changeImage(this)">
+                        <img src="images/products/vodikova-flaska.jpg" alt="Vodikova flaška detail" class="thumb"
+                            onclick="changeImage(this)">
+                        <img src="images/products/vodikova-flaska.jpg" alt="Vodikova flaška use" class="thumb"
+                            onclick="changeImage(this)">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-detail-info" data-aos="fade-left">
+
+                    <h1 class="product-detail-title">Vodikova Flaška</h1>
+
+                    <div class="product-detail-price">170,00 €</div>
+
+                    <div class="product-short-desc">
+                        <p>Portabilna vodikova flaška za vsakodnevno uporabo. Pripravite svojo vodikovo vodo kjerkoli in
+                            kadarkoli. Eleganten dizajn, enostavna uporaba, idealna za aktivni življenjski slog.</p>
+                    </div>
+
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <strong>SKU:</strong> FLASK-001
+                        </div>
+                        <div class="meta-item">
+                            <strong>Kategorija:</strong> Vodikova flaška
+                        </div>
+                        <div class="meta-item">
+                            <strong>Kapaciteta:</strong> 500ml
+                        </div>
+                    </div>
+
+                    <!-- Color Selector -->
+                    <div class="color-selector">
+                        <label>Izberite barvo:</label>
+                        <div class="color-options">
+                            <div class="color-option color-blue active" onclick="selectColor(this, 'Modra')"
+                                title="Modra"></div>
+                            <div class="color-option color-red" onclick="selectColor(this, 'Rdeča')" title="Rdeča">
+                            </div>
+                            <div class="color-option color-black" onclick="selectColor(this, 'Črna')" title="Črna">
+                            </div>
+                            <div class="color-option color-pink" onclick="selectColor(this, 'Rožnata')" title="Rožnata">
+                            </div>
+                            <div class="color-option color-gold" onclick="selectColor(this, 'Zlata')" title="Zlata">
+                            </div>
+                        </div>
+                        <p class="selected-color-display">Izbrana barva: <strong id="selectedColor">Modra</strong></p>
+                    </div>
+
+                    <div class="product-actions-detail">
+                        <div class="quantity-selector">
+                            <label for="quantity">Količina:</label>
+                            <div class="quantity-controls">
+                                <button onclick="decreaseQty()" class="qty-btn">-</button>
+                                <input type="number" id="quantity" value="1" min="1" max="10">
+                                <button onclick="increaseQty()" class="qty-btn">+</button>
+                            </div>
+                        </div>
+
+                        <button class="snipcart-add-item btn-modern btn-large" data-item-id="flask-001"
+                            data-item-price="170.00" data-item-url="/vodikova-flaska.html"
+                            data-item-description="Vodikova flaška - portabilna rešitev za zdravo vodo na poti"
+                            data-item-image="images/products/vodikova-flaska.jpg" data-item-name="Vodikova Flaška"
+                            data-item-custom1-name="Barva" data-item-custom1-options="Modra|Rdeča|Črna|Rožnata|Zlata"
+                            data-item-custom1-value="Modra" data-item-quantity="1">
+                            Dodaj v košarico
+                        </button>
+                    </div>
+
+                    <div class="product-features">
+                        <h3>Ključne prednosti:</h3>
+                        <ul>
+                            <li>✓ 500ml kapaciteta - idealno za vsakodnevno uporabo</li>
+                            <li>✓ Portabilna in lahka</li>
+                            <li>✓ Hitro polnjenje z vodikom (3-5 minut)</li>
+                            <li>✓ USB polnjenje - polna mobilnost</li>
+                            <li>✓ 5 čudovitih barv</li>
+                            <li>✓ 1-letna garancija</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs" data-aos="fade-up">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" onclick="openTab('opis')">Opis</button>
+                    <button class="tab-btn" onclick="openTab('specifikacije')">Specifikacije</button>
+                    <button class="tab-btn" onclick="openTab('uporaba')">Uporaba</button>
+                    <button class="tab-btn" onclick="openTab('dostava')">Dostava</button>
+                </div>
+
+                <div id="opis" class="tab-content active">
+                    <h2>Opis proizvoda</h2>
+                    <p>Vodikova flaška je vrhunska portabilna naprava za pripravo vodikove vode kjerkoli in kadarkoli.
+                        Ne glede na to, ali ste v pisarni, na treningu ali na poti, lahko zdaj uživate v prednostih
+                        vodikove vode brez omejitev.</p>
+
+                    <h3>Zakaj izbrati našo vodikovo flaškou?</h3>
+                    <ul>
+                        <li><strong>Mobilnost</strong> - nositelna velikost, ki gre lahko povsod z vami</li>
+                        <li><strong>Hitrost</strong> - vodikova voda je pripravljena v samo 3-5 minutah</li>
+                        <li><strong>USB polnjenje</strong> - polnite kjerkoli, brez vezanosti na vtičnico</li>
+                        <li><strong>Premium materiali</strong> - visokokakovostno steklo in nerjavno jeklo</li>
+                        <li><strong>Stil</strong> - eleganten dizajn v 5 barvah</li>
+                    </ul>
+                </div>
+
+                <div id="specifikacije" class="tab-content">
+                    <h2>Tehnične specifikacije</h2>
+                    <table class="specs-table">
+                        <tr>
+                            <td>Model</td>
+                            <td>Vodikova Flaška Premium</td>
+                        </tr>
+                        <tr>
+                            <td>Kapaciteta</td>
+                            <td>500 ml</td>
+                        </tr>
+                        <tr>
+                            <td>Koncentracija H2</td>
+                            <td>Do 1500 ppb</td>
+                        </tr>
+                        <tr>
+                            <td>Čas priprave</td>
+                            <td>3-5 minut</td>
+                        </tr>
+                        <tr>
+                            <td>Polnjenje</td>
+                            <td>USB-C</td>
+                        </tr>
+                        <tr>
+                            <td>Baterija</td>
+                            <td>1500mAh Li-ion (20+ polnjenj)</td>
+                        </tr>
+                        <tr>
+                            <td>Višina</td>
+                            <td>240 mm</td>
+                        </tr>
+                        <tr>
+                            <td>Premer</td>
+                            <td>70 mm</td>
+                        </tr>
+                        <tr>
+                            <td>Teža</td>
+                            <td>450g</td>
+                        </tr>
+                        <tr>
+                            <td>Material</td>
+                            <td>Borosilikatno steklo, nehrđec</td>
+                        </tr>
+                        <tr>
+                            <td>Barve</td>
+                            <td>Modra, Rdeča, Črna, Rožnata, Zlata</td>
+                        </tr>
+                        <tr>
+                            <td>Garancija</td>
+                            <td>1 leto</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="uporaba" class="tab-content">
+                    <h2>Navodila za uporabo</h2>
+
+                    <h3>Kako uporabljati vodikovo flašku?</h3>
+                    <ol>
+                        <li><strong>Napolnite flašku</strong> z vodo (pitna, filtrirana ali mineralna)</li>
+                        <li><strong>Pritisnite gumb</strong> za začetek procesa elektrolize</li>
+                        <li><strong>Počakajte 3-5 minut</strong> - LED indikator bo zasvetlil ko je voda pripravljena
+                        </li>
+                        <li><strong>Uživajte</strong> v svoji vodikovi vodi!</li>
+                    </ol>
+
+                    <h3>Priporočila</h3>
+                    <ul>
+                        <li>Pijte vodikovo vodo takoj po pripravi za najboljše rezultate</li>
+                        <li>Uporabljajte 2-3x dnevno</li>
+                        <li>Očistite steklo vsaj enkrat tedensko</li>
+                        <li>Flaško polnite vsaj enkrat na teden</li>
+                    </ul>
+                </div>
+
+                <div id="dostava" class="tab-content">
+                    <h2>Dostava in vračilo</h2>
+                    <h3>Dostava</h3>
+                    <p>Brezplačna dostava po vsej Sloveniji v 2-3 delovnih dneh.</p>
+
+                    <h3>Vračilo</h3>
+                    <p>14-dnevna garancija vračila denarja. Če niste popolnoma zadovoljni, lahko izdelek vrnete v 14
+                        dneh po prejemu.</p>
+
+                    <h3>Garancija</h3>
+                    <p>Vse naše vodikove flaške imajo 1-letno proizvajalčevo garancijo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo-new.jpg" alt="Ohrani Zdravje" height="40">
+                    </div>
+                    <p class="footer-about">
+                        Vodilni ponudnik vodikovih rešitev za zdravje v Sloveniji.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 OhraniZdravje.si. Vse pravice pridržane.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Snipcart -->
+    <div id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY_HERE" data-config-modal-style="side" data-currency="eur"
+        hidden></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+</body>
+
+</html>
