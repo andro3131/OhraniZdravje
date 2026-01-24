@@ -1613,7 +1613,7 @@ a {
 
 /* Products Section */
 .products-section {
-    padding: var(--spacing-xl) 0;
+    padding: 2rem 0 var(--spacing-xl);
 }
 
 .products-grid {
