@@ -1596,7 +1596,7 @@ a {
 /* Page Hero */
 .page-hero {
     background: var(--gradient-purple);
-    padding: 4rem 0 2rem;
+    padding: 1.5rem 0 2rem;
     text-align: center;
     color: white;
 }
