@@ -339,10 +339,66 @@ a {
     margin-bottom: var(--spacing-sm);
 }
 
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #a8edea 50%, #fed6e3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 .hero-subtitle {
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: var(--spacing-lg);
+}
+
+/* Hero Trust Badges */
+.hero-trust-badges {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.trust-badge svg {
+    color: #a8edea;
+    flex-shrink: 0;
 }
 
 /* Glassmorphism CTA Box */
@@ -510,6 +566,33 @@ a {
 .btn-small {
     padding: 8px 16px;
     font-size: 14px;
+}
+
+/* Glow Effect for CTA */
+.btn-glow {
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 4px 15px rgba(14, 165, 233, 0.3),
+            0 0 20px rgba(14, 165, 233, 0.2),
+            0 0 40px rgba(139, 92, 246, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 8px 24px rgba(14, 165, 233, 0.5),
+            0 0 30px rgba(14, 165, 233, 0.4),
+            0 0 60px rgba(139, 92, 246, 0.4);
+    }
+}
+
+.btn-glow:hover {
+    animation: glow-pulse 1s ease-in-out infinite;
 }
 
 /* ============ TRUST BAR ============ */
